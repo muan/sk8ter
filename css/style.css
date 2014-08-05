@@ -1,6 +1,6 @@
 body {
   margin:0; padding:0;
-  font-family: "Source Sans Pro";
+  font-family: "VT323", monospace;
   font-weight: bold;
   font-size: 12px;
 }
@@ -106,4 +106,18 @@ body {
   2% { left: 50% }
   30% { left: 54%; }
   35% { left: 54%; }
+}
+
+.keys {
+  position: absolute;
+  padding: 10px;
+}
+
+.key {
+  margin-bottom: 10px;
+  display: inline-block;
+  padding: 5px 8px;
+  border: 1px solid #000;
+  border-radius: 2px;
+  text-transform: uppercase;
 }
