@@ -3,11 +3,17 @@ var Person = function() {
 }
 
 Person.prototype.jump = function() {
+  if(this.isJumping()) return false
+
   var body = this.body
   body.toggleClass("ontheground jumping")
   setTimeout(function() {
     body.toggleClass("ontheground jumping")
   }, 200)
+}
+
+Person.prototype.isJumping = function() {
+  return this.body.hasClass("jumping")
 }
 
 $(document).on("keyup", function(event) {
