@@ -85,7 +85,7 @@ body {
   z-index: 100;
   width: 35px; height: 46px;
   background-image: url(../img/man.png);
-  -webkit-transition: .1s ease-in;
+  -webkit-transition: left .1s ease-in, bottom .1s ease-in;
 }
 
 .sk8terboi.jumping {
@@ -93,21 +93,17 @@ body {
   background-position: -70px 0;
 }
 
-.sk8terboi.ontheground {
-  -webkit-animation: brust 4s infinite steps(1, end), speed 4s infinite ease-out;
+.sk8terboi.push {
+  background-position: -35px 0;
 }
 
-@-webkit-keyframes brust {
-  0% { background-position: 0 0; }
-  6% { background-position: 0 0; }
-  6% { background-position: -35px 0; }
-  7% { background-position: -35px 0; }
-  12% { background-position: 0 0; }
+.sk8terboi.speed {
+  -webkit-animation: speed 4s infinite ease-out;
 }
 
 @-webkit-keyframes speed {
   0% { left: 50% }
-  9% { left: 50% }
-  30% { left: 53%; }
-  35% { left: 53%; }
+  2% { left: 50% }
+  30% { left: 54%; }
+  35% { left: 54%; }
 }
