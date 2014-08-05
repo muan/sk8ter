@@ -107,7 +107,7 @@ body {
 
 @-webkit-keyframes speed {
   0% { left: 50% }
-  4% { left: 50% }
+  9% { left: 50% }
   30% { left: 53%; }
   35% { left: 53%; }
 }
