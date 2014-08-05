@@ -1,0 +1,97 @@
+body {
+  margin:0; padding:0;
+  font-family: "Source Sans Pro";
+  font-weight: bold;
+  font-size: 12px;
+}
+
+.canvas {
+  height: 400px;
+  background-image: linear-gradient(to bottom,
+    #8acaff 300px,
+    #a25a0d 301px,
+    #a25a0d 302px,
+    #efb87b 303px,
+    #efb87b 400px
+  );
+  position: relative;
+  overflow: hidden;
+}
+
+/*soil*/
+.canvas:after {
+  content: ""; display: block;
+  background-image: repeating-linear-gradient(-45deg,
+    transparent 5px,
+    #a25a0d 6px,
+    #a25a0d 7px,
+    transparent 8px,
+    transparent 11px
+  );
+  background-size: 8px 4px;
+  background-repeat: repeat-x;
+  height: 10px;
+  position: relative;
+  -webkit-animation: background .08s infinite linear;
+  background-position: 0 0;
+}
+@-webkit-keyframes background {
+  0% { background-position: 0 0; }
+  100% { background-position: -10px 0; }
+}
+
+.sky {
+  height: 300px;
+  position: relative;
+}
+
+@-webkit-keyframes blowsa {
+  0% { right: -20% }
+  100% { right: 120% }
+}
+
+@-webkit-keyframes blowsb {
+  0% { right: -50% }
+  100% { right: 120% }
+}
+
+.sky:before, .sky:after {
+  position: absolute;
+  content: ""; display: block;
+  width: 35px;
+  height: 20px;
+  border-radius: 70% 80%;
+  opacity: .4;
+  background-color: white;
+  box-shadow: -22px -5px 0 rgba(255, 255, 255, .5);
+}
+
+.sky:after {
+  -webkit-animation: blowsa 25s infinite linear;
+  right: -20%;
+  top: 230px;
+}
+
+.sky:before {
+  -webkit-animation: blowsb 20s infinite linear;
+  right: -50%;
+  top: 180px;
+}
+
+.sk8terboi {
+  position: absolute;
+  left: 50%;
+  bottom: 100px;
+  z-index: 100;
+  width: 35px; height: 46px;
+  background-image: url(../img/man2.png);
+  -webkit-animation: speeed 2s infinite steps(1, end);
+}
+
+@-webkit-keyframes speeed {
+  0% { background-position: 0 0; }
+  59% { background-position: 0 0; }
+  60% { background-position: -35px 0; margin-left: 2px; }
+  70% { background-position: -35px 0; }
+  71% { background-position: 0 0; }
+}
