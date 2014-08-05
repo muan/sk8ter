@@ -94,13 +94,20 @@ body {
 }
 
 .sk8terboi.ontheground {
-  -webkit-animation: speed 2s infinite steps(1, end);
+  -webkit-animation: brust 4s infinite steps(1, end), speed 4s infinite ease-out;
+}
+
+@-webkit-keyframes brust {
+  0% { background-position: 0 0; }
+  6% { background-position: 0 0; }
+  6% { background-position: -35px 0; }
+  7% { background-position: -35px 0; }
+  12% { background-position: 0 0; }
 }
 
 @-webkit-keyframes speed {
-  0% { background-position: 0 0; }
-  9% { background-position: 0 0; }
-  10% { background-position: -35px 0; margin-left: 1px; }
-  20% { background-position: -35px 0; margin-left: 2px; }
-  21% { background-position: 0 0; margin-left: 3px; }
+  0% { left: 50% }
+  4% { left: 50% }
+  30% { left: 53%; }
+  35% { left: 53%; }
 }
