@@ -91,19 +91,10 @@ body {
 .sk8terboi.jumping {
   bottom: 125px;
   background-position: -70px 0;
-  /*-webkit-animation: jump 1s infinite steps(1, end);*/
 }
 
 .sk8terboi.ontheground {
   -webkit-animation: speed 2s infinite steps(1, end);
-}
-
-@-webkit-keyframes jump {
-  0% { background-position: -70px 0; }
-  59% { background-position: -70px 0; }
-  60% { background-position: 0 0; }
-  70% { background-position: 0 0; }
-  71% { background-position: 0 0; }
 }
 
 @-webkit-keyframes speed {
