@@ -121,3 +121,23 @@ body {
   border-radius: 2px;
   text-transform: uppercase;
 }
+
+.block {
+  border: 2px solid #a25a0d;
+  border-bottom: 0;
+  background: #efb87b;
+  right: -20px;
+  width: 20px;
+  position: absolute;
+  bottom: 101px;
+  -webkit-animation: moveOutOfFrame 80s infinite linear;
+}
+
+.block-1 {
+  height: 10px;
+}
+
+@-webkit-keyframes moveOutOfFrame {
+  0% { margin-right: 0; }
+  100% { margin-right: 10000px; }
+}
