@@ -15,10 +15,7 @@ $(document).on("keyup", function(event) {
 
 $(document).on("ready", function() {
   window.person = new Person()
-  window.track  = new Track()
+  window.game   = new Game()
 
-  track.detect()
-  track.blocking = setInterval(function() {
-    window.track.addBlock(1)
-  }, 3000)
+  game.start()
 })

@@ -1,4 +1,4 @@
-var Track = function() {
+var Game = function() {
 }
 
 var range = function(a, b) {
@@ -21,20 +21,27 @@ var inzone = function(cordinateA, cordinateB) {
   return [x, y]
 }
 
-Track.prototype.addBlock = function(height) {
+Game.prototype.addBlock = function(height) {
   $("<div class='js-block block block-" + height + "'></div>").appendTo(".canvas")
 }
 
-Track.prototype.pause = function() {
+Game.prototype.start = function() {
+  this.detect()
+  this.blocking = setInterval(function() {
+    window.game.addBlock(1)
+  }, 3000)
+}
+
+Game.prototype.pause = function() {
   $(".js-block").each(function(_, block) {
     $(block).css("left", block.offsetLeft + "px")
   })
   $('body').addClass('pause')
-  clearInterval(track.detecting)
-  clearInterval(track.blocking)
+  clearInterval(this.detecting)
+  clearInterval(this.blocking)
 }
 
-Track.prototype.detect = function() {
+Game.prototype.detect = function() {
   var track = this
 
   this.tracked = setInterval(function() {
