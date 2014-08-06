@@ -5,6 +5,14 @@ body {
   font-size: 12px;
 }
 
+.pause .canvas,
+.pause .canvas:after,
+.pause .sky:before,
+.pause .sky:after,
+.pause .block {
+  -webkit-animation: none !important;
+}
+
 .canvas {
   height: 400px;
   background-image: linear-gradient(to bottom,
@@ -127,7 +135,7 @@ body {
   border-bottom: 0;
   background: #efb87b;
   right: -20px;
-  width: 20px;
+  width: 40px;
   position: absolute;
   bottom: 101px;
   -webkit-animation: moveOutOfFrame 80s infinite linear;
