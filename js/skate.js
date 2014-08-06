@@ -7,6 +7,10 @@ $(document).on("keyup", function(event) {
   if(event.keyCode == 68) {
     person.pushFoward()
   }
+  // p - pause
+  if(event.keyCode == 80) {
+    track.pause()
+  }
 })
 
 $(document).on("ready", function() {
