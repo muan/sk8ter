@@ -5,6 +5,11 @@ body {
   font-size: 12px;
 }
 
+a {
+  color: #000;
+  text-decoration: none;
+}
+
 .pause .canvas,
 .pause .canvas:after,
 .pause .sky:before,
@@ -141,9 +146,14 @@ body {
   35% { left: 54%; }
 }
 
-.keys {
+.keys, .github {
   position: absolute;
   padding: 10px;
+}
+
+.github {
+  z-index: 100;
+  right: 0;
 }
 
 .key {
