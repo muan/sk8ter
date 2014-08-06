@@ -26,6 +26,30 @@ body {
   overflow: hidden;
 }
 
+.pause .gameover {
+  display: block;
+}
+
+.gameover {
+  display: none;
+  width: 300px;
+  position: absolute;
+  left: 50%;
+  margin: 40px;
+  font-size: 14px;
+  color: #0a4c86;
+  margin-left: -150px;
+  text-align: center;
+  text-shadow: -1px -1px 0 rgba(0, 0, 0, .12);
+}
+
+.gameover h1 {
+  color: #fff;
+  line-height: 90px;
+  font-size: 120px;
+  margin: 0 0 5px;
+}
+
 /*soil*/
 .canvas:after {
   content: ""; display: block;
@@ -92,6 +116,7 @@ body {
   bottom: 100px;
   z-index: 100;
   width: 35px; height: 46px;
+  margin-left: -16px;
   background-image: url(../img/man.png);
   -webkit-transition: left .1s ease-in, bottom .1s ease-in;
 }
