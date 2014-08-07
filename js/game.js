@@ -45,11 +45,11 @@ Game.prototype.detect = function() {
   var track = this
 
   this.tracked = setInterval(function() {
-    var man = person.body[0]
-    var x1 = man.offsetLeft
-    var x2 = man.offsetLeft + man.clientWidth
-    var y1 = man.offsetTop
-    var y2 = man.offsetTop + man.clientHeight
+    var body = person.body[0]
+    var x1 = body.offsetLeft
+    var x2 = body.offsetLeft + body.clientWidth
+    var y1 = body.offsetTop
+    var y2 = body.offsetTop + body.clientHeight
 
     $('.js-block').each(function(_, block) {
       var _x1 = block.offsetLeft
@@ -57,21 +57,22 @@ Game.prototype.detect = function() {
       var _y1 = block.offsetTop
       var _y2 = block.offsetTop + block.clientHeight
       var inz = inzone([x1, x2, y1, y2], [_x1, _x2, _y1, _y2])
+      var jumped = $(body).hasClass("jumped")
 
       if(_x2 <= 0) {
         // if block is not in frame
         block.remove()
-      } else if(!inz[0] && $(man).hasClass("ontop") && $(block).hasClass("blocking")) {
-        // if man is on a block
-        $(man).removeClass("ontop").removeAttr("style")
+      } else if(!inz[0] && jumped && $(block).hasClass("blocking")) {
+        // if body is on a block
+        $(body).removeClass("jumped").removeAttr("style")
         $(block).removeClass("blocking")
       } else if(inz.indexOf(true) >= 0) {
         // if blocked in any way
         if(inz[0] && !inz[1]) {
-          // if man in the air (blocked in x but not y)
+          // if body in the air (blocked in x but not y)
           $(block).addClass("blocking")
-          $(man).addClass('ontop').css("margin-bottom", block.clientHeight + 4 + "px")
-        } else if(inz[0] && inz[1]) {
+          $(body).addClass('jumped').css("margin-bottom", block.clientHeight + 4 + "px")
+        } else if(inz[0] && inz[1] && !jumped) {
           // if totally blocked
           track.pause()
         }
