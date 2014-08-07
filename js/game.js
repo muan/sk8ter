@@ -71,7 +71,7 @@ Game.prototype.detect = function() {
         if(inz[0] && !inz[1]) {
           // if body in the air (blocked in x but not y)
           $(block).addClass("blocking")
-          $(body).addClass('jumped').css("margin-bottom", block.clientHeight + 4 + "px")
+          $(body).addClass('jumped').css("margin-bottom", 400 - block.offsetTop - 100 + "px")
         } else if(inz[0] && inz[1] && !jumped) {
           // if totally blocked
           track.pause()
