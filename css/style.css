@@ -140,6 +140,21 @@ a {
   -webkit-animation: speed 4s infinite ease-out;
 }
 
+.cat {
+  background-size: 480px 47px;
+  position: absolute;
+  right: 2%;
+  bottom: 100px;
+  width: 80px; height: 45px;
+  background-image: url(../img/cat.png);
+  -webkit-animation: play-cat 0.8s steps(6) infinite;
+}
+
+@-webkit-keyframes play-cat {
+  from { background-position: 0px; }
+  to { background-position: -480px; }
+}
+
 @-webkit-keyframes speed {
   0% { left: 50% }
   2% { left: 50% }
@@ -170,7 +185,7 @@ a {
   border: 2px solid #a25a0d;
   border-bottom: 0;
   background: #efb87b;
-  right: -20px;
+  right: 50px;
   width: 40px;
   position: absolute;
   bottom: 101px;
