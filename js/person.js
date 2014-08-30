@@ -9,12 +9,7 @@ Person.prototype.pushFoward = function() {
 }
 
 Person.prototype.jump = function() {
-  if(this.isJumping()) return false
   addAndRemoveClass("ontheground jumping", 200)
-}
-
-Person.prototype.isJumping = function() {
-  return this.body.hasClass("jumping")
 }
 
 var addAndRemoveClass = function(classes, ms) {
